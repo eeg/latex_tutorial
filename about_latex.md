@@ -87,9 +87,17 @@ help
 
 ## Links to more information
 
-* A rant against word-processors: http://ricardo.ecn.wfu.edu/~cottrell/wp.html
-* About beautiful typography: http://nitens.org/taraborelli/latex
+* Accessible documentation: https://en.wikibooks.org/wiki/LaTeX
 
-* Friendly documentation: https://en.wikibooks.org/wiki/LaTeX
   * slides: https://en.wikibooks.org/wiki/LaTeX/Presentations#The_Beamer_package
   * bibliographies: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+
+* Tons of questions with detailed answers, or ask your own: http://tex.stackexchange.com/
+
+* UMN thesis template (scroll down to "For LaTeX"): http://www.grad.umn.edu/current-students-graduate-student-services-progress/thesis-submission
+
+* Styles for articles in various biology journals (and google for lots more): https://schneider.ncifcrf.gov/latex.html
+
+* A rant against word-processors: http://ricardo.ecn.wfu.edu/~cottrell/wp.html
+
+* About beautiful typography: http://nitens.org/taraborelli/latex
