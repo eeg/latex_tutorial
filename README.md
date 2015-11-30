@@ -18,5 +18,5 @@ It's free, and all you need is a web browser---everything else is handled in the
 
 ## Practice using LaTeX
 
-[Click here to create your own copy of our tutorial on Overleaf.](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/eeg/latex_tutorial/master/tutorial/tutorial.zip&splash=none)
+[Click here to create your own copy of our tutorial on Overleaf.](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/eeg/latex_tutorial/master/tutorial.zip&splash=none)
 Each section of this interactive tutorial illustrates some features of LaTeX and then encourages you to try them out.
