@@ -1,0 +1,78 @@
+\documentclass{article}
+% All latex files should begin with a "documentclass" declaration.
+
+% By the way, the "comment character" in latex is the percent sign.  So, anything after a % on a line will be ignored when compiling the source document.  We'll use that a lot, and you may want to use it to leave yourself notes as you're learning.  A good text editor will display comments in a different color or font, so that it's obvious what is latex and what is notes.
+
+% All latex commands begin with a backslash, \.  Curly braces { } contain mandatory arguments to a command.  Square brackets [ ] contain optional arguments.
+
+% For example, try editing the first line to read instead:\documentclass[12pt]{article}
+% Providing that optional argument to the documentclass command changes the font size from the default (10 point) to 12 point.
+
+% Here is much more (totally optional) information about documentclass: http://texblog.org/2013/02/13/latex-documentclass-options-illustrated/
+
+%%%%%%%%%%%%%%%%
+%%% PREAMBLE %%%
+%%%%%%%%%%%%%%%%
+
+% The preamble is a set of formatting instructions, which you provide to latex before your actual content.  It begins with the \documentclass command, above.  Then typically a lot of packages are loaded, and maybe some other declarations.  All of that can be typed right here.
+
+% Alternatively, it can be helpful to confine much of the preamble to a separate file.  This keeps it out of your way and makes it easy to reuse for other documents.  Here, I've put most of the preamble into a separate file, which we'll load now:
+\usepackage{tutorial}  % loads the tutorial.sty file
+% You can take a look in tutorial.sty now, and we'll refer to it later on.
+
+% But just to illustrate that formatting commands can be given here in the main document, try uncommenting one of these next lines (that is, remove the comment % from the beginning of the line).  This will change the font throughout the document, from LaTeX's classic Computer Modern to something else.
+%
+%\usepackage{mathptmx}     % Times font, for text and math
+%\usepackage[sc]{mathpazo} % snazzy font suggested by American Naturalist
+
+\begin{document} %  Essential! And don't forget the matching \end{document} at the end of your content.
+
+%%%%%%%%%%%%%%%%%
+%%% MAIN TEXT %%%
+%%%%%%%%%%%%%%%%%
+
+Text goes here.
+
+\end{document} % Essential!  The end of your content.
+
+If using Overleaf (preliminaries)
+    switch to Manual
+    create Version
+    open Projects panel to see files
+    panel to edit source file, panel to see compiled pdf
+    git clone (just fyi; won't use here)
+
+(use booktabs)
+tabular
+table (floating env)
+copy, add row, add column, align column
+(R's xtable)
+
+\include table or some text
+
+cref for everything
+change Figure to Fig.
+
+section heading
+change font
+ref by number
+ref by name
+
+bibliography
+bibtex, biblatex
+
+math examples
+inline, display
+quadratic equation, solution
+link to fancy amstex examples
+
+figure, caption, label
+add another figure, with caption
+make with R, or inkscape with textext
+endfloat: move all figures to end
+
+line numbers
+
+table of contents
+
+task environment "Try It" "Exercise" "Task"
