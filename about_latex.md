@@ -4,7 +4,7 @@
 
 LaTeX is a document preparation system.
 You provide your text, figures, tables, equations, section names, citations, and any other content.
-You also provide formatting specifications, like page size and the look of section headers.
+You also provide formatting specifications like page size, font, the look of section headers, and whether to use two columns, hyperlinks, line numbers, etc.
 Then you tell LaTeX to do its thing: you issue a command like `latex myfile.tex` to compile your document's source file.
 The result is your document formatted as a printed (pdf) page, `myfile.pdf`.
 
@@ -23,7 +23,7 @@ Some differences from what you might be used to:
 
   * Write with markup tags, then compile.  Like HTML or Markdown.  Your source file includes text that explains the formatting you want.  Then the compilation step turns that into a formatted document.
 
-  * Optimize your document.  The TeX software implements algorithms for high-quality typesetting.  That is, it has opinions about what looks good.  It takes your content and formatting descriptions, and it optimizes the whole document, thinking about page breaks, figure and table placement, arrangement of math symbols, spacing around math and punctuation, hyphenation, line justification, etc.  It also renders fonts beautifully, including ligatures and kerning.
+  * Optimize your document.  The TeX software implements algorithms for high-quality typesetting.  That is, it has opinions about what looks good.  It takes your content and formatting descriptions, and it optimizes the whole document, thinking about page breaks, figure and table placement, arrangement of math symbols, spacing around math and punctuation, hyphenation, line justification, etc.  It also renders fonts elegantly, including ligatures and kerning.
 
 Neither a word-processor (e.g., MS Word) nor a typical markup language (e.g., R-Markdown) includes such a typographical optimization process.
 You are giving up some control over what the final product looks like.
@@ -45,7 +45,7 @@ Some key examples:
 
   * Automatic numbering of figures, tables, equations, etc.  Both the figures (etc.) themselves, and also their references in the text.  Same for section names and numbers, and line numbers.
 
-  * Automatic, customizeable generation of table of contents, list of figures, list of tables, etc.
+  * Automatic, customizeable generation of table of contents, list of figure captions, list of tables, etc.
 
   * Automatic, customizeable generation of citations in the text and the corresponding bibliography section.  This is achieved by using BibTeX (or BibLaTeX) in addition to LaTeX.
 
@@ -73,17 +73,21 @@ This has some very powerful advantages.
 
 ### Modularity
 
-#### Files
+LaTeX allows for a very modular workflow.  This manifests in a multiple ways.
 
-#### Workflow
+  * Files.  Each chunk of a document (section, table, box, etc.) can be placed in its own file.  All the pieces are then assembled by the main document (using `\input` or `\include`) during compilation.  This facilitates version control, navigating to the appropriate place in the source code, temporarily omitting some sections, and re-organizing the components.  It also works well when an external script is used to generate some components (e.g., using the R `xtable` package to generate a table whenever the data are updated).
 
-#### Tools
+  * Tools.  Text editors were mentioned above---even when working on the same document, each author can use whichever tool is preferred.  The same goes for PDF viewers, software to manage literature databases, and the various methods for compiling the document.
 
 ### Community
 
-open source: free, philosophy (don't have to club baby seals)
-packages (CTAN)
-help
+LaTeX is open source and has a strong community of advocates and users.
+
+  * Tons of packages.  The many, many users of LaTeX have written many, many packages to provide specific functionalities.  The core of LaTeX is extremely stable, and exciting new features come through add-on packages.  They are typically installed however you installed LaTeX itself, but their central repository is [CTAN](https://www.ctan.org/).  This is analogous to how R can be extended by installing myriad packages from CRAN.
+
+  * Online help.  I have used LaTeX pretty much every week for two decades  (frighteningly, that is not an exaggeration!), and I still google pretty much every week for help on how to accomplish specific formatting tasks.  Usually, extremely helpful answers turn up on blogs and Q&A sites like StackExchange.  LaTeX appeals to the problem-solving mindset, and tons of people are happy to help with any task, simple or complex.
+
+  * Free as in speech.  When I asked my long-time latex-using friend what to emphasize in this tutorial, the first answer was "you don't have to club baby seals."  He meant that everything---LaTeX itself, and the tools we use along with it---is open source, rather than beholden to a corporate overlord.  This is philosophically important to me, too, but I know it doesn't matter for everyone.  I've thus tried to emphasize above many of the advantages that LaTeX provides in practice, rather than in principle.  It is the most efficient and effective tool for many jobs.
 
 ## Links to more information
 
