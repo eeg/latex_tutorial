@@ -8,23 +8,42 @@
 \usepackage[paper=letterpaper, margin=1in]{geometry}
 
 %--------------------------------------------------
-% Double-spacing
+% Spacing
 %--------------------------------------------------
 
+% Paragraphs
+\parindent 0pt
+\parskip 10pt
+
+% For text that is not right-justified, uncomment this
+% \raggedright
+
+% Double-spacing
 \usepackage{setspace}
 \setstretch{1.0}
 % Put whatever number you want here.  1.0 is single-spaced and 2.0 is double-spaced.
 
 %--------------------------------------------------
+% Custom commands
+%--------------------------------------------------
+
+% For printing LaTeX code without executing it.
+\usepackage{listings}
+\newcommand{\latexcode}[1]{\lstinline[language={[LaTeX]TeX},basicstyle=\ttfamily]{#1}}
+
+% For naming each subsection that is a task or exercise.
+\newcommand{\task}{Try this}
+
+%--------------------------------------------------
 % Section headers
 %--------------------------------------------------
-% Use the titlesec package to format the headers.
 
 \usepackage[compact,tiny]{titlesec}
 
 \titleformat*{\section}{\bfseries}
 \titleformat*{\subsection}{\itshape\bfseries}
-\titleformat*{\subsubsection}{\itshape}
+\titleformat*{\subsubsection}{\itshape} % for italic
+% \titleformat*{\subsubsection}{\scshape} % for small caps
 
 %--------------------------------------------------
 % Within-text references
@@ -96,4 +115,4 @@
 
 \usepackage{lineno}
 \modulolinenumbers[5] % which lines to number
-\linenumbers % turn on the numbering
+% \linenumbers % turn on the numbering

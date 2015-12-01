@@ -25,13 +25,113 @@
 %\usepackage{mathptmx}     % Times font, for text and math
 %\usepackage[sc]{mathpazo} % snazzy font suggested by American Naturalist
 
-\begin{document} %  Essential! And don't forget the matching \end{document} at the end of your content.
+\title{Yet Another \LaTeX\ Tutorial}
+\author{For Foundations Class}
+\date{2 December 2015}
+
+\begin{document} %  Essential!  And don't forget the matching \end{document} at the end of your content.
+
+\maketitle
+% This goes with the \title{} above.  There is lots more about titlepages here: https://en.wikibooks.org/wiki/LaTeX/Title_Creation
 
 %%%%%%%%%%%%%%%%%
 %%% MAIN TEXT %%%
 %%%%%%%%%%%%%%%%%
 
-Text goes here.
+Each section below highlights features or commands in \LaTeX.
+Each ends with a suggestion for experimenting with what you've just learned.
+Definitely feel free to experiment more!
+
+%--------------------------------------------------
+\section{Paragraphs}
+\label{sec:paragraphs}
+%--------------------------------------------------
+
+Paragraphs are separated by blank lines in the source file.
+If there is no blank line, the text is all formatted as the same paragraph.
+Thus, \LaTeX\ ignores the linebreak that comes at the end of each sentence here.
+One sentence per line is good practice, though, especially when using version control (like \texttt{git}).
+
+Here is the start of a new paragraph.  \\
+The double-backslash causes this sentence to start on a new line, but without a paragraph break.
+
+\vspace{20pt}
+Adding more blank lines doesn't increase the amount of space between paragraphs.
+To do that, we use the \latexcode{\\vspace} command to add a specified amount of vertical space.
+
+Here are some miscellaneous examples of text formatting.
+\textbf{Bold.}
+\emph{Emphasized.  Usually italic.  But can be un-italicized if \emph{emphasized} within italics.}
+\large{Larger than usual.}
+\small{Smaller than usual.}
+`Inside single smart quotes.'
+``Inside double smart quotes---it's an em-dash!''
+
+\subsection{\task}
+
+Write two paragraphs of text.
+Try to stick with one line per sentence.
+Use unnecessary text formatting (bold, etc.)
+
+Adjust the paragraph indentation and spacing between paragraphs by changing the values of \latexcode{\\parindent} and \latexcode{\\parskip} in \latexcode{tutorial.sty}.
+
+Notice how nice the justified text looks.
+But to remove the right justification, find the \latexcode{\\raggedright} command in \latexcode{tutorial.sty}.
+
+%--------------------------------------------------
+\section{Custom Commands}
+\label{sec:custom}
+%--------------------------------------------------
+
+Now let's jump straight to an advanced \LaTeX\ feature: defining your own commands.
+We've already used two of them, which I put into \latexcode{tutorial.sty}.
+One is \latexcode{\\latexcode}, for printing \LaTeX\ commands without executing them---it's a bit complicated, so don't mess with that line.
+
+\subsection{\task}
+
+The other custom command is simpler, and you can easily change it.
+I wanted each subsection of exercises to have the same name, but I kept changing my mind about what that name should be.
+It is currently \task.
+Go into \latexcode{tutorial.sty}, find the line where \latexcode{\\task} is defined, and change the definition to something else, maybe ``Exercises'' or ``Tasks''.
+Now notice the new name of this subsection, and of all the other ones with tasks.
+This is a handy trick to maintain consistency without repeated bouts of search-and-replace.
+
+%--------------------------------------------------
+\section{Sections}
+\label{sec:sections}
+%--------------------------------------------------
+
+We have also defined in \latexcode{tutorial.sty} how the section headings should look, using the \latexcode{titlesec} package.
+
+\subsection{This is a Subsection}
+
+\subsubsection{This is a Subsubsection}
+
+\subsubsection*{This is a Subsubsection Without a Number}
+
+We can refer to sections by number, even if we don't know what the number is.
+For example, we discussed custom commands in \cref{sec:custom}, and we are now discussing sections in \cref{sec:sections}.
+We'll talk about cross-referencing more below (\cref{sec:refs}), but for now, just know that the key was the \latexcode{\\label} command we issued right after the name of each section.
+
+\subsection{\task}
+
+In \latexcode{tutorial.sty}, change the subsubsection format to small caps.
+Look at the lines above to check that it worked.
+
+Refer by number to the section where we discussed paragraph formatting.
+
+
+%--------------------------------------------------
+\section{Cross-Referencing}
+\label{sec:refs}
+%--------------------------------------------------
+% TODO
+
+cref for everything
+
+change Figure to Fig.
+
+ref section by name
 
 \end{document} % Essential!  The end of your content.
 
@@ -50,14 +150,6 @@ copy, add row, add column, align column
 
 \include table or some text
 
-cref for everything
-change Figure to Fig.
-
-section heading
-change font
-ref by number
-ref by name
-
 bibliography
 bibtex, biblatex
 
@@ -74,5 +166,3 @@ endfloat: move all figures to end
 line numbers
 
 table of contents
-
-task environment "Try It" "Exercise" "Task"
