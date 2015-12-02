@@ -139,7 +139,7 @@ Display math works like this:
 %     https://en.wikibooks.org/wiki/LaTeX/Mathematics
 %     http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf
 
-\section{\task}
+\subsection{\task}
 
 The quadratic equation is
 \begin{equation}
@@ -150,14 +150,48 @@ Write out its solution for x.
 % Hint: https://en.wikipedia.org/wiki/Quadratic_formula
 
 %--------------------------------------------------
+\section{Literature Citations}
+\label{sec:literature}
+%--------------------------------------------------
+
+For in-text citations and printing the list of literature cited, \LaTeX\ uses BibTeX.
+(Or BibLaTeX is the new implementation, but I have not figured out how to use that with our journals.)
+See the \latexcode{refs.bib} file for the papers that are cited in the following paragraph.
+
+\citet{Janzen1967} started his paper with a reference to \citet{Simpson1964}, who noted that restricted dispersal should lead to increased population isolation and hence an increased number of species.
+The difficulty of crossing mountain barriers in less seasonal environments, Janzen argued, may therefore contribute to the higher species diversity in tropical regions than temperate ones \citep{Ghalambor2006}.
+This falls into one general class of explanations for why there are more species at lower latitudes: that there is a higher rate of lineage diversification (speciation minus extinction) in tropical regions               \citep{Ricklefs2006, Weir2007, Mittelbach2007}.
+
+Along with BibTeX, we're using the package \latexcode{natbib} to format the citations, and the bibliography style file \latexcode{amnatnat.bst} (provided by \emph{American Naturalist}) to format the references section.
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Natbib
+The References would normally be printed at the end of the document, but let's put them here for convenience.
+
+\bibliography{refs}          % see refs.bib
+\bibliographystyle{amnatnat} % see amnatnat.bst
+
+\subsection{\task}
+
+Add one paper to \latexcode{refs.bib}.
+You can type in all the info, or look for an ``Export to BibTeX'' link on a journal webpage or Google Scholar.
+When you recompile this document, do you see your new paper in the References section above?
+
+Now write a sentence that cites your new paper, and then recompile this document.
+Now do you see your new reference in the References above?
+
+%--------------------------------------------------
 \section{Figures}
 \label{sec:figures}
 %--------------------------------------------------
 
-explain about floats
+The \latexcode{\\includegraphics} command can be used to place an image in your document.
+Usually, however, we want to package a caption along with the figure.
+When \LaTeX\ does this, it places the figure+caption into a ``floating'' container, so that they occur together and are placed somewhere that is nearby and suits the page layout.
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
 
-\begin{figure}[h]
-\includegraphics[width=0.9\textwidth]{landscape.pdf}
+For example, I am writing the info for \cref{fig:landscape} here, but it may be placed elsewhere on this or the the following page if it fits better there.
+\begin{figure}
+\centering\includegraphics[width=0.8\textwidth]{landscape.pdf}
 \caption{A generalized adaptive landscape.
     This is here because it was the first PDF figure I found.
     \LaTeX\ can handle lots of graphics formats, but PDF is especially nice because it is a vector format and so scales well.
@@ -166,8 +200,9 @@ explain about floats
 \label{fig:landscape}
 \end{figure}
 
+This subsequent figure, \cref{fig:lion}, will definitely be placed after the earlier figure.
 \begin{SCfigure}[50]
-\centering\includegraphics[width=0.25\textwidth]{lion.png}
+\includegraphics[width=0.25\textwidth]{lion.png}
 % https://www.ctan.org/lion/
 \caption{CTAN lion drawing by Duane Bibby.
     Also, this caption is to the side of the image.
@@ -176,11 +211,13 @@ explain about floats
 \label{fig:lion}
 \end{SCfigure}
 
-\TeX\ has a classy mascot, as we see in \cref{fig:lion}.
-There is also some biology in \cref{fig:landscape}.
+\subsection{\task}
 
-a note about figure placement \\
-endfloat: move all figures to end
+Add a figure and its caption.
+
+When you have large figures and captions, and especially when a journal demands it, it's nice to have an easy way to place all the figures at the end of the document.
+To accomplish this, go into \latexcode{tutorial.sty} and uncomment the code for the \latexcode{endfloat} package.
+See what happens with the figure placement, and note the snazzy list of figures.
 
 %--------------------------------------------------
 \section{Cross-Referencing}
@@ -193,6 +230,8 @@ section by name (number was done above) \\
 equation, figure, table \\
 change Figure to Fig.
 
+\TeX\ has a classy mascot, as we see in \cref{fig:lion}.
+There is also some biology in \cref{fig:landscape}.
 
 \end{document} % Essential!  The end of your content.
 
@@ -214,9 +253,6 @@ copy, add row, add column, align column
 (R's xtable)
 
 \include table or some text
-
-bibliography
-bibtex, biblatex
 
 line numbers
 

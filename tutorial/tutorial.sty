@@ -64,8 +64,8 @@
 % Bibliography
 %--------------------------------------------------
 
-\usepackage{natbib}
-% \usepackage[numbers,sort&compress]{natbib}
+\usepackage{natbib}                           % author-year
+% \usepackage[numbers,sort&compress]{natbib}  % numerical
 
 % Picky matters can be fixed up.
 % Many of our journals specify no comma between the author and year:
@@ -79,6 +79,13 @@
 
 \usepackage{graphicx} % to include graphics files
 \usepackage{sidecap}  % to place captions at the side instead of below
+
+% place figures and tables at the end of the document:
+% \usepackage{endfloat}
+% and push sidecaption figures to end, too:
+% \DeclareDelayedFloatFlavour{SCfigure}{figure}
+% allow more than one figure per page:
+% \renewcommand{\efloatseparator}{\vfill}
 
 %--------------------------------------------------
 % Tables

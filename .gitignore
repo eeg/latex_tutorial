@@ -1,3 +1,7 @@
 *.aux
 *.log
+*.lof
+*.fff
+*.bbl
+*.blg
 tutorial/tutorial.pdf
