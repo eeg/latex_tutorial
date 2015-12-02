@@ -91,10 +91,7 @@ LaTeX is open source and has a strong community of advocates and users.
 
 ## Links to more information
 
-* Accessible documentation: https://en.wikibooks.org/wiki/LaTeX
-
-  * slides: https://en.wikibooks.org/wiki/LaTeX/Presentations#The_Beamer_package
-  * bibliographies: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+* Lots of accessible documentation: https://en.wikibooks.org/wiki/LaTeX
 
 * Tons of questions with detailed answers, or ask your own: http://tex.stackexchange.com/
 
