@@ -43,14 +43,62 @@ Each ends with a suggestion for experimenting with what you've just learned.
 Definitely feel free to experiment more!
 
 %--------------------------------------------------
+\section{If Using Overleaf} % This is the name of this section, obviously.
+\label{sec:overleaf}        % This \label command is optional.  See the Cross-Reference section below for an explanation.
+%--------------------------------------------------
+
+Before we start, here are a few preliminaries that will make things easier if you're using this tutorial through the Overleaf web service.
+
+\begin{enumerate}
+    \item Copy the URL to somewhere.  This will allow you to retain any changes you make.
+    \item Switch the Preview button from Auto to Manual.  This will prevent unnecessary compilation when you're not ready for it.  To compile the document after you've made changes, click ``refresh preview.''
+    \item Click Versions and create a label for this original state of the document.  This will make it easy to see what you've changed.
+\end{enumerate}
+
+(By the way, each Overleaf project is secretly a git repository!
+So you can push and pull your changes instead of editing in a web browser.
+We won't get into that here, though.)
+% https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta
+
+%--------------------------------------------------
+\section{Lists}
+\label{sec:lists}
+%--------------------------------------------------
+
+We've already used a list above.
+In general, a \latexcode{\\begin} command must always have a matching \latexcode{\\end} command.
+Above, we began and ended an \latexcode{enumerate} environment to get a numbered list.
+Each item in the list begins with \latexcode{\\item}.
+
+Here is a nested list:
+\begin{enumerate}
+    \item Plant
+    \begin{enumerate}
+        \item Tomato
+        \item Hosta
+    \end{enumerate}
+    \item Animal
+    \begin{enumerate}
+        \item Cat
+        \item Stegosaurus
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{\task}
+
+Copy or type a numbered list here, with a third layer of nesting.
+
+Change the list to use bullet points instead of numbers, by changing \latexcode{enumerate} to \latexcode{itemize}.
+
+%--------------------------------------------------
 \section{Paragraphs}
 \label{sec:paragraphs}
 %--------------------------------------------------
 
-Paragraphs are separated by blank lines in the source file.
+Paragraphs are separated by blank lines in the source file, as you have probably realized by now.
 If there is no blank line, the text is all formatted as the same paragraph.
 Thus, \LaTeX\ ignores the linebreak that comes at the end of each sentence here.
-One sentence per line is good practice, though, especially when using version control (like \texttt{git}).
+One sentence per line is good practice, though, especially when using version control (like git).
 
 Here is the start of a new paragraph.  \\
 The double-backslash causes this sentence to start on a new line, but without a paragraph break.
@@ -62,6 +110,7 @@ To do that, we use the \latexcode{\\vspace} command to add a specified amount of
 Here are some miscellaneous examples of text formatting.
 \textbf{Bold.}
 \emph{Emphasized.  Usually italic.  But can be un-italicized if \emph{emphasized} within italics.}
+\texttt{Typewriter-style text.}
 \large{Larger than usual.}
 \small{Smaller than usual.}
 `Inside single smart quotes.'
@@ -234,17 +283,6 @@ change Figure to Fig.
 There is also some biology in \cref{fig:landscape}.
 
 \end{document} % Essential!  The end of your content.
-
-
-If using Overleaf (preliminaries)
-    write down url
-    switch to Manual
-    create Version
-    open Projects panel to see files
-    panel to edit source file, panel to see compiled pdf
-    git clone (just fyi; won't use here)
-
-lists
 
 (use booktabs)
 tabular
