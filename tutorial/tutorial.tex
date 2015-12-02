@@ -87,7 +87,7 @@ Here is a nested list:
     \end{enumerate}
 \end{enumerate}
 
-\subsection{\task}
+\subsection*{\task}
 
 Copy or type a numbered list here, with a third layer of nesting.
 
@@ -112,14 +112,14 @@ To do that, we use the \latexcode{\\vspace} command to add a specified amount of
 
 Here are some miscellaneous examples of text formatting.
 \textbf{Bold.}
-\emph{Emphasized.  Usually italic.  But can be un-italicized if \emph{emphasized} within italics.}
+\emph{Emphasized.  Usually italic.  But will be un-italicized if \emph{emphasized} within italics.}
 \texttt{Typewriter-style text.}
 \large{Larger than usual.}
 \small{Smaller than usual.}
 `Inside single smart quotes.'
 ``Inside double smart quotes---it's an em-dash!''
 
-\subsection{\task}
+\subsection*{\task}
 
 Write two paragraphs of text.
 Try to stick with one line per sentence.
@@ -128,7 +128,7 @@ Use unnecessary text formatting (bold, etc.)
 Adjust the paragraph indentation and spacing between paragraphs by changing the values of \latexcode{\\parindent} and \latexcode{\\parskip} in \latexcode{tutorial.sty}.
 
 Notice how nice the justified text looks.
-But to remove the right justification, find the \latexcode{\\raggedright} command in \latexcode{tutorial.sty}.
+But to remove the right justification, uncomment the \latexcode{\\raggedright} command in \latexcode{tutorial.sty}.
 
 %--------------------------------------------------
 \section{Custom Commands}
@@ -139,7 +139,7 @@ Now let's jump straight to an advanced \LaTeX\ feature: defining your own comman
 We've already used two of them, which I put into \latexcode{tutorial.sty}.
 One is \latexcode{\\latexcode}, for printing \LaTeX\ commands without executing them---it's a bit complicated, so don't mess with that line.
 
-\subsection{\task}
+\subsection*{\task}
 
 The other custom command is simpler, and you can easily change it.
 I wanted each subsection of exercises to have the same name, but I kept changing my mind about what that name should be.
@@ -165,7 +165,7 @@ We can refer to sections by number, even if we don't know what the number is.
 For example, we discussed custom commands in \cref{sec:custom}, and we are now discussing sections in \cref{sec:sections}.
 We'll talk about cross-referencing more below (\cref{sec:refs}), but for now, just know that the key was the \latexcode{\\label} command we issued right after the name of each section.
 
-\subsection{\task}
+\subsection*{\task}
 
 In \latexcode{tutorial.sty}, change the subsubsection format to small caps.
 Look at the lines above to check that it worked.
@@ -191,7 +191,7 @@ Display math works like this:
 %     https://en.wikibooks.org/wiki/LaTeX/Mathematics
 %     http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf
 
-\subsection{\task}
+\subsection*{\task}
 
 The quadratic equation is
 \begin{equation}
@@ -222,7 +222,7 @@ The References would normally be printed at the end of the document, but let's p
 \bibliography{refs}          % see refs.bib
 \bibliographystyle{amnatnat} % see amnatnat.bst
 
-\subsection{\task}
+\subsection*{\task}
 
 Add one paper to \latexcode{refs.bib}.
 You can type in all the info, or look for an ``Export to BibTeX'' link on a journal webpage or Google Scholar.
@@ -230,6 +230,54 @@ When you recompile this document, do you see your new paper in the References se
 
 Now write a sentence that cites your new paper, and then recompile this document.
 Now do you see your new reference in the References above?
+
+%--------------------------------------------------
+\section{Tables}
+\label{sec:tables}
+%--------------------------------------------------
+
+Here is a simple table.
+We've made it look a bit nicer than the default by using the \latexcode{booktabs} package.
+
+\begin{tabular}{cc}
+\toprule
+Plant  & Animal      \\
+\midrule
+Tomato & Cat         \\
+Hosta  & Stegosaurus \\
+\bottomrule
+\end{tabular}
+% Note the use of & to separate columns and \\ to separate rows.
+% The {cc} means both columns should be centered.
+
+Here is a slightly more complicated example:
+
+\begin{center}
+\begin{tabular}{llr}  
+  \toprule
+  \multicolumn{2}{c}{Item} \\
+  \cmidrule(r){1-2}
+  Animal    & Description & Price (\$) \\
+  \midrule
+  Gnat      & per gram    & 13.65      \\
+            &    each     & 0.01       \\
+  Gnu       & stuffed     & 92.50      \\
+  Emu       & stuffed     & 33.33      \\
+  Armadillo & frozen      & 8.99       \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Tables can be arbitrarily complicated!
+% https://en.wikibooks.org/wiki/LaTeX/Tables
+They can also be a bit tedious to format by hand.
+Other tools can help---for example, the R package \texttt{xtable} can write a data table as a \latexcode{.tex} file, which you can paste in.
+
+\subsection*{\task}
+
+Copy one of the tables from above, or type your own.
+Add a row.
+Add a column.
 
 %--------------------------------------------------
 \section{Figures}
@@ -263,7 +311,10 @@ This subsequent figure, \cref{fig:lion}, will definitely be placed after the ear
 \label{fig:lion}
 \end{SCfigure}
 
-\subsection{\task}
+(Actually, it is common to place tables and their captions as floating environments, too.
+We didn't do that in \cref{sec:tables}, but basically you'd keep the \latexcode{tabular} environment, wrap it in \latexcode{\\begin\{table\}} and \latexcode{\\end\{table\}}, and stick a \latexcode{\\caption} (and \latexcode{\\label}) in with it.)
+
+\subsection*{\task}
 
 Add a figure and its caption.
 
@@ -287,10 +338,5 @@ There is also some biology in \cref{fig:landscape}.
 
 \end{document} % Essential!  The end of your content.
 
-(use booktabs)
-tabular
-table (floating env)
-copy, add row, add column, align column
-(R's xtable)
 
 \include table or some text
