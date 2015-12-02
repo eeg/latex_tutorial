@@ -343,15 +343,31 @@ See what happens with the figure placement, and note the snazzy list of figures.
 \section{Cross-Referencing}
 \label{sec:refs}
 %--------------------------------------------------
-% TODO
 
-cref \\
-section by name (number was done above) \\
-equation, figure, table \\
-change Figure to Fig.
+We've already been doing a lot of cross-referencing, but let's consider that a bit more.
+The basic idea is that things (sections, equations, figures, etc.) are labeled with \latexcode{\\label}, and then they are cited by label.
+If you use meaningful labels, like \latexcode{eq:quadratic} instead of \latexcode{equation1}, it's easy to remember what to refer to even when things get moved around.
+
+The most basic cross-reference is the number provided by \latexcode{\\ref}.
+For example, the number of this section is \ref{sec:refs}.
+Instead of writing Sect.~\ref{sec:refs}, I'm using a package called \latexcode{cleveref} to do some of the work, so I only need to write \cref{sec:refs}.
+This is nice to keep the labels consistent, e.g., always ``Fig.'' instead of sometimes ``figure''.
+It also does smart things to combine references, like \cref{fig:lion,fig:landscape} and \cref{sec:tables,sec:figures,sec:refs}.
 
 \TeX\ has a classy mascot, as we see in \cref{fig:lion}.
 There is also some biology in \cref{fig:landscape}.
+\Cref{eq:deriv} is some basic calculus, while \cref{eq:quadratic} is algebra.
+
+We can also use the \latexcode{nameref} package to refer to sections by name.
+For example, \cref{sec:refs} is titled \nameref{sec:refs}.
+
+\subsection*{\task}
+
+Cross-reference the equation you wrote for ``\task'' in \cref{sec:math}.
+Be sure you gave it a label.
+
+Suppose we are submitting to a different journal and need to switch from ``Fig.'' to ``figure''.
+Find the line in \latexcode{tutorial.sty} to do that.  Easy!
 
 
 \end{document} % Essential!  The end of your content.
