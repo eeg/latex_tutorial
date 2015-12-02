@@ -173,6 +173,23 @@ Look at the lines above to check that it worked.
 Refer by number to the section where we discussed paragraph formatting.
 
 %--------------------------------------------------
+\section{Separating Files}
+\label{sec:input}
+%--------------------------------------------------
+
+I often find it extremely helpful to break the content of a large document up into multiple source files.
+For example, one file each for Introduction, Methods, Results, Discussion.
+Or if I generate a table with R (see \cref{sec:tables}), that naturally winds up as its own source file.
+Then, all those separate files can be combined into one overall document.
+The logic is like putting code into \texttt{file1.R} and \texttt{file2.R} and then calling \texttt{source("file1.R")} and \texttt{source("file1.R")} in your main file.
+
+\input{input_example.tex}
+
+\subsection*{\task}
+
+Make a new \latexcode{.tex} file, write something in it, and \latexcode{\\input} it here.
+
+%--------------------------------------------------
 \section{Math}
 \label{sec:math}
 %--------------------------------------------------
@@ -336,7 +353,5 @@ change Figure to Fig.
 \TeX\ has a classy mascot, as we see in \cref{fig:lion}.
 There is also some biology in \cref{fig:landscape}.
 
+
 \end{document} % Essential!  The end of your content.
-
-
-\include table or some text
